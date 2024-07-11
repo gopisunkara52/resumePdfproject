@@ -14,32 +14,32 @@ const  Login =()=> {
 
     console.log("userData",userData)
      const [data,setData]=useState({
-         userName:"",
+        //  userName:"",
          email:"",
          password:""
      });
 
-    //  const totalData = []
-
-    //  totalData.push({...userData,data})
-
-
- 
-    //  console.log("totalData",totalData)
+   
     
      const handleChange = (e)=> {
         setData({...data,[e.target.name]:e.target.value})
      }
 
-    //  const handleSubmit  = () => {
-    //     dispatch(setJump(data))
-    //     navigate("/home")
-    //  }
+  
+
+       const logindta ={
+           email:"gopisunkara52@gmail.com",
+           password:"Gopi@123"
+       }
 
     const handleSubmit  = () => {
+        if(data.email==logindta.email&&data.password==logindta.password){
             dispatch(setJump(data))
             navigate("/welcome")
+        }else{
+            alert("wrong credentioals")
         }
+        };
 
      console.log("dataaaa",data)
     
@@ -48,11 +48,11 @@ const  Login =()=> {
      }
      
     return(
-        <Box w="100%" >
-            <Box >
+        <Box w="100%" bg="gray.100">
+            <Box bg="white" p="2" shadow={"lg"}>
             <Text>Login</Text>
             <Stack spacing={5} margin={"20px"}>
-            <Input placeholder='user name' size='md' name="userName" value={data?.userName} onChange={handleChange}/>
+            {/* <Input placeholder='user name' size='md' name="userName" value={data?.userName} onChange={handleChange}/> */}
             <Input placeholder='email' size='md' name="email" value={data?.email}  onChange={handleChange}/>
             <Input placeholder='password' size='md' name="password" value={data?.password} onChange={handleChange}/>
             <Button onClick={handleSubmit} bg={'blue.500'}>Submit</Button>

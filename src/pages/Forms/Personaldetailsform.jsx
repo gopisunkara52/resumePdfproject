@@ -24,6 +24,7 @@ const Personaldetailsform =()=>{
 
  const savebutton =()=>{
     dispatch(setPersonalData(personaldata));
+     navigate("/home/educationform")
     console.log(personaldata);
 
  };

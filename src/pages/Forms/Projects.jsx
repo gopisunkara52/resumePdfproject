@@ -8,6 +8,7 @@ const Projects =()=>{
   const dispatch = useDispatch();
 
   const [forms, setForms] = useState([]);
+  const [count,setCount]= useState(0)
   const [projectsdata,setProjectsdata] = useState([
     {
     title:"",
@@ -24,6 +25,7 @@ const Projects =()=>{
   const addForm = () => {
     setForms([...forms, { id: Date.now() }]);
     setProjectsdata(prevedataArray =>[...prevedataArray])
+    
   };
 
   const deleteForm = (formId) => {
@@ -73,7 +75,7 @@ const Projects =()=>{
           <Box key={form.id} m="20px">
             <Box display={"flex"} justifyContent={"space-between"} bg="blue.600">
               <Box m="5px">
-                <label htmlFor={`name${form.id}`}>Project {count}</label>
+           <label htmlFor={`name${form.id}`}>Project </label>
               </Box>
               <Box m="5px">
                 <Button

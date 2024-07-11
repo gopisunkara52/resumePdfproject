@@ -4,20 +4,22 @@ import { Outlet } from "react-router-dom";
 import Imagee from "./Imagee";
 const Layout = () => {
   return (
-    <Box>
-    <Flex>
+    <>
+    <Box  display={"flex"} flexDirection={"row"}>
+    
       <Box w="70%">
-        {/* <Image
+        <Image
           src="https://colibriwp.com/blog/wp-content/uploads/2018/07/banner-redimensionat.jpg"
           alt=""
-        /> */}
-        <Imagee/>
+          height={"100vh"}
+        />
+        {/* <Imagee/> */}
       </Box>
-      <Box w="30%" >
+      <Box w="30%">
       <Outlet />
       </Box>
-    </Flex>
     </Box>
+    </>
   );
 };
 export default Layout;

@@ -7,7 +7,7 @@ import { IoIosCreate } from "react-icons/io";
 const Welcome =()=>{
     const navigate = useNavigate();
     const next =()=>{
-        navigate("/home")
+        navigate("/home/personaldetailsform")
     }
 
 
@@ -25,7 +25,7 @@ const Welcome =()=>{
             <Flex justifyContent={"center"} gap={"100px"}>
             <Grid templateColumns='repeat(2, 1fr)' gap={6} margin={"50px"} >
                 
-                 <GridItem w='100%' h='30'  > 
+                 <GridItem w='100%' h='30' cursor={"pointer"} > 
                  <Box display={"flex"} justifyContent={"center"} width={"200px"} bg={"blue"} onClick={next   }>
                  <Text color={"white"} ><IoIosCreate size={"50px"}  color="white"/> Create CV</Text>
                  </Box>
