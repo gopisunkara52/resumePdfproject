@@ -10,6 +10,7 @@ const initialState = {
   referenceData:[],
   skillsData:[],
   languagesknowns:[],
+  pdfUrl:[],
 
 };
 const authslice = createSlice({
@@ -46,6 +47,9 @@ const authslice = createSlice({
     setLanguagesknowns:(state,action)=>{
       state.languagesknowns= action.payload;
     },
+    setPdfUrl:(state,action)=>{
+      state.pdfUrl=action.payload;
+    },
 
 
   },
@@ -61,6 +65,7 @@ export const {
     setReferenceData,
     setSkillsData,
     setLanguagesknowns,
+    setPdfUrl,
 
 
 

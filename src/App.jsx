@@ -20,6 +20,7 @@ import Projects from './pages/Forms/Projects';
 import Pdf from './pages/Pdf';
 import Laguages from './pages/Forms/Languages';
 import Welcome from './components/Welcome';
+import Newpage from './pages/Newpage';
 
 function App() {
  
@@ -50,6 +51,7 @@ function App() {
         </Route>
  
         <Route  path="/pdf" element={<Pdf/>}/>
+        <Route  path="/downloads" element={<Newpage/>}/>
         </Routes>
       </BrowserRouter>
      

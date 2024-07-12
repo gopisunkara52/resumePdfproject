@@ -8,8 +8,10 @@ import {
   PDFViewer,
   pdf,
 } from "@react-pdf/renderer";
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 import { useDispatch,useSelector } from "react-redux";
+import { setPdfUrl } from "../Slice";
+import { useNavigate } from "react-router-dom";
 
 
 const styles = StyleSheet.create({
@@ -234,7 +236,7 @@ const Pdf = () => {
   console.log(lang,"11111111111111")
 
 
-
+const dispatch =useDispatch()
 
 
     const handleDownloadPDF = async () => {
@@ -257,10 +259,14 @@ const Pdf = () => {
         document.body.removeChild(a);
         URL.revokeObjectURL(pdfUrl);
     
-    
+        dispatch(setPdfUrl(pdfUrl))
     
     }
     
+    const navigate = useNavigate()
+    const backtoHome =()=>{
+      navigate("/welcome")
+    }
 
 
     
@@ -269,8 +275,10 @@ const Pdf = () => {
 
   return (
     <Box w="100%" h="49rem" >
+      <Flex gap={5} p="2">
       <Button onClick={handleDownloadPDF} colorScheme="blue">download</Button>
-
+      <Button onClick={backtoHome} colorScheme="green">Back To Home</Button>
+      </Flex>
       <PDFViewer showToolbar={false} width="100%" height="100%" >
         <Mydocument  education ={usereducationdata} experinceofuser ={userexperience} 
                      objectiveuser={userobjective} persnoladtatauser={userpersonal}
